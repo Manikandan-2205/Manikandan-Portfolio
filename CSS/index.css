@@ -270,49 +270,234 @@ body.dark-mode {
   }
 }
 
-/* #about */
-header {
+/* Root Variables for Light and Dark Modes */
+:root {
+  --bg-color-light: #f9f9f9;
+  --text-color-light: #333;
+  --link-bg-color-light: #fff;
+  --link-hover-bg-color: #007bff;
+  --link-hover-text-color-light: #fff;
+  --shadow-color-light: rgba(0, 0, 0, 0.2);
+  --profile-shadow-light: rgba(0, 0, 0, 0.3);
+
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #f9f9f9;
+  --link-bg-color-dark: #333;
+  --link-hover-text-color-dark: #f9f9f9;
+  --shadow-color-dark: rgba(255, 255, 255, 0.2);
+  --profile-shadow-dark: rgba(255, 255, 255, 0.3);
+}
+
+/* General Styles */
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Light Mode */
+body.light-mode {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* About Section */
+#about {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+.about-title {
+  font-size: 2.5rem;
+  color: #007bff;
   text-align: center;
+  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-.about-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--text-color);
-  position: relative;
-  display: inline-block;
-  animation: fadeInTitle 2s ease-out;
+/* About Section Text */
+.about-description {
+  font-size: 1rem;
+  color: var(--text-color-light);
+  text-align: justify;
+  line-height: 1.8;
 }
 
-@keyframes fadeInTitle {
-  0% {
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Hover Effects */
+.about-section {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-section:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(10px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 
-.about-row {
-  padding: 15px;
-  border-radius: 8px;
-  background-color: var(--link-bg-color);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+/* Education */
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  margin: 20px 0;
 }
 
-.about-row:hover {
-  transform: scale(1.03);
-  background-color: var(--hover-bg-color);
-  box-shadow: 0 6px 15px var(--hover-shadow-color);
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #007bff;
+  z-index: 0;
 }
 
-.about-row p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px; /* Rounded corners */
+  background: var(--link-bg-color-light); /* Light background */
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Space between items */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.timeline-item.left {
+  left: 0;
+  transform: translateX(-30%);
+}
+
+.timeline-item.right {
+  left: 50%;
+  transform: translateX(30%);
+}
+
+.timeline-item .year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background: #007bff; /* Background color for the year */
+  color: white; /* Text color */
+  border-radius: 50px; /* Oval shape */
+  padding: 10px 20px; /* Padding for the oval */
+  position: absolute;
+  top: -30px; /* Position above the item */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; /* Ensure it appears above the timeline */
+}
+
+.timeline-item .details {
+  margin-top: 20px; /* Space for the year above */
+  text-align: center;
+}
+
+/* Down Arrow */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 100%; /* Position above the item */
+  margin-left: -5px; /* Center the arrow */
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #007bff transparent; /* Down arrow color */
+}
+
+/* Animation */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Effect */
+.timeline-item:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.timeline-item .year:hover {
+  transform: scale(1.1); /* Slightly enlarge the year on hover */
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .timeline-item {
+  background: var(--link-bg-color-dark); /* Dark background */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
+}
+
+body.dark-mode .timeline-item:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); /* Lighter shadow on hover in dark mode */
+}
+
+
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 90%; /* Full width on smaller screens */
+    left: 5%; /* Center the item */
+  }
+
+  .timeline-item.left {
+    transform: translateX(0); /* Reset transform for left items */
+  }
+
+  .timeline-item.right {
+    transform: translateX(0); /* Reset transform for right items */
+  }
+
+  .timeline-item .year {
+    font-size: 1.2rem; /* Smaller font size for the year */
+    padding: 8px 16px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item .year {
+    font-size: 1rem; /* Even smaller font size for mobile */
+    padding: 6px 12px; /* Adjust padding */
+  }
+
+  .timeline -item {
+    padding: 15px; /* Adjust padding for items */
+  }
 }

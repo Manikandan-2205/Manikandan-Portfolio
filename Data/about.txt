@@ -1,2 +1,4 @@
-about
-Experienced .NET Developer with a solid foundation in web application development using .NET Core MVC, ASP.NET Web Forms, and Entity Framework. Skilled in database management, SQL, PL/SQL, and Python, coupled with a deep understanding of data analysis and problem-solving. Proven leadership in guiding teams to achieve project success and deliver high-quality solutions. Eager to transition into Data Analyst, Data Engineer, or Data Scientist roles, aiming to apply strong technical expertise and analytical capabilities to drive data-driven decision-making and business growth. Passionate about continuous learning and innovation in the tech field.
+    Experienced .NET Developer with a solid foundation in web application development using .NET Core MVC, ASP.NET Web Forms, and Entity Framework. 
+Skilled in database management, SQL, PL/SQL, and Python, coupled with a deep understanding of data analysis and problem-solving. 
+Proven leadership in guiding teams to achieve project success and deliver high-quality solutions. 
+Eager to transition into Data Analyst, Data Engineer, or Data Scientist roles, aiming to apply strong technical expertise and analytical capabilities to drive data-driven decision-making and business growth. Passionate about continuous learning and innovation in the tech field.
