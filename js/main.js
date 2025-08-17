@@ -1,38 +1,50 @@
- 
 $(document).ready(function() {
-    // Mobile menu toggle
-    $('.hamburger').click(function() {
-        $('.mobile-menu').toggleClass('hidden');
-        $(this).toggleClass('open');
+    // Theme Toggle
+    const themeToggle = $('#theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme preference or use system preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+        $('html').addClass('dark');
+    }
+    
+    // Toggle theme
+    themeToggle.click(function() {
+        $('html').toggleClass('dark');
+        const theme = $('html').hasClass('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
+    
+    // Mobile Menu Toggle
+    $('.mobile-menu-toggle').click(function() {
+        $('.nav-links').toggleClass('hidden');
+        $(this).find('i').toggleClass('mdi-menu mdi-close');
     });
     
     // Close mobile menu when clicking a link
-    $('.mobile-menu a').click(function() {
-        $('.mobile-menu').addClass('hidden');
-        $('.hamburger').removeClass('open');
+    $('.nav-link').click(function() {
+        $('.nav-links').addClass('hidden');
+        $('.mobile-menu-toggle').find('i').removeClass('mdi-close').addClass('mdi-menu');
     });
     
     // Smooth scrolling for anchor links
     $('a[href*="#"]').not('[href="#"]').click(function(e) {
-        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && 
-            location.hostname === this.hostname) {
-            let target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 80
-                }, 800);
-                return false;
-            }
+        e.preventDefault();
+        const target = $($(this).attr('href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 80
+            }, 800);
         }
     });
     
     // Sticky header
     $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
-            $('nav').addClass('scrolled');
+            $('.navbar').addClass('scrolled');
         } else {
-            $('nav').removeClass('scrolled');
+            $('.navbar').removeClass('scrolled');
         }
     });
     
@@ -54,29 +66,23 @@ $(document).ready(function() {
     
     // Animate skill bars when section is in view
     function animateSkillBars() {
-        $('.skill-bar').each(function() {
+        $('.skill-progress').each(function() {
             const width = $(this).data('width');
             $(this).css('width', width);
         });
     }
     
     // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target.id === 'skills') {
                     animateSkillBars();
                 }
-                $(entry.target).find('[data-animate]').each(function() {
-                    $(this).addClass('animate');
-                });
+                $(entry.target).find('[data-animate]').addClass('animate');
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
     
     // Observe all sections
     $('section').each(function() {

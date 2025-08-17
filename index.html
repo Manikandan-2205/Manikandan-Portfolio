@@ -1,101 +1,110 @@
- 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manikandan P | Python & .NET Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
 </head>
-<body class="font-poppins bg-gray-50">
+<body>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <i class="mdi mdi-weather-sunny dark:hidden"></i>
+        <i class="mdi mdi-weather-night hidden dark:block"></i>
+    </button>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-indigo-600">MP</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-800 hover:text-indigo-600 active">Home</a>
-                    <a href="#about" class="nav-link text-gray-800 hover:text-indigo-600">About</a>
-                    <a href="#skills" class="nav-link text-gray-800 hover:text-indigo-600">Skills</a>
-                    <a href="#education" class="nav-link text-gray-800 hover:text-indigo-600">Education</a>
-                    <a href="#projects" class="nav-link text-gray-800 hover:text-indigo-600">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-800 hover:text-indigo-600">Contact</a>
-                </div>
-                <button class="md:hidden focus:outline-none hamburger">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">MP</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu hidden md:hidden bg-white py-4 px-6 shadow-lg">
-            <a href="#home" class="block py-2 nav-link text-gray-800 hover:text-indigo-600 active">Home</a>
-            <a href="#about" class="block py-2 nav-link text-gray-800 hover:text-indigo-600">About</a>
-            <a href="#skills" class="block py-2 nav-link text-gray-800 hover:text-indigo-600">Skills</a>
-            <a href="#education" class="block py-2 nav-link text-gray-800 hover:text-indigo-600">Education</a>
-            <a href="#projects" class="block py-2 nav-link text-gray-800 hover:text-indigo-600">Projects</a>
-            <a href="#contact" class="block py-2 nav-link text-gray-800 hover:text-indigo-600">Contact</a>
+            <button class="mobile-menu-toggle">
+                <i class="mdi mdi-menu"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 px-4">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 slide-up">Hi, I'm <span class="text-indigo-600">Manikandan P</span></h1>
-                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 slide-up delay-1">Python & .NET Core Developer</h2>
-                <p class="text-gray-600 mb-8 text-lg slide-up delay-2">Building scalable solutions with data-driven decision making</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 slide-up delay-3">
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                    <a href="#contact" class="btn-secondary">Contact Me</a>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="text-gradient">Hi, I'm Manikandan P</span>
+                </h1>
+                <h2 class="hero-subtitle">Python & .NET Core Developer</h2>
+                <p class="hero-text">Building scalable solutions with data-driven decision making</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="mdi mdi-code-braces mr-2"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="mdi mdi-email-outline mr-2"></i> Contact Me
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://linkedin.com/in/manikandan2205" target="_blank" class="social-icon">
+                        <i class="mdi mdi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Manikandan-2205" target="_blank" class="social-icon">
+                        <i class="mdi mdi-github"></i>
+                    </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center fade-in delay-4">
-                <img src="assets/images/profile.jpg" alt="Manikandan P" class="rounded-xl shadow-xl w-full max-w-md">
-            </div>
+            <!-- <div class="hero-image">
+                <img src="assets/images/Profile.jpg" alt="Manikandan P" class="profile-img">
+                <div class="decorative-shape"></div>
+            </div> -->
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <img src="assets/images/profile.jpg" alt="Manikandan P" class="rounded-xl shadow-lg w-full max-w-xs floating">
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="assets/images/profile.jpg" alt="Manikandan P">
                 </div>
-                <div class="md:w-2/3 md:pl-12">
-                    <p class="text-gray-600 mb-6 text-lg">Enthusiastic Python Developer with hands-on experience in building REST APIs, performing data analysis, and implementing machine learning models.</p>
-                    <p class="text-gray-600 mb-8 text-lg">Strong foundation in Python, Flask, Django, Pandas, NumPy, and scikit-learn. Actively seeking roles in Python Development, Data Engineering, or Data Science.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-indigo-600 text-xl mr-4"></i>
-                            <span>manikandanp.2205@gmail.com</span>
+                <div class="about-content">
+                    <h3 class="about-heading">Python & .NET Developer from Erode, India</h3>
+                    <p class="about-text">Enthusiastic Python Developer with hands-on experience in building REST APIs, performing data analysis, and implementing machine learning models.</p>
+                    <p class="about-text">Strong foundation in Python, Flask, Django, Pandas, NumPy, and scikit-learn. Actively seeking roles in Python Development, Data Engineering, or Data Science.</p>
+                    
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="mdi mdi-email-outline"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>manikandanp.2205@gmail.com</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-phone text-indigo-600 text-xl mr-4"></i>
-                            <span>+91 9360982027</span>
+                        <div class="info-item">
+                            <i class="mdi mdi-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 9360982027</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-indigo-600 text-xl mr-4"></i>
-                            <span>Erode, Tamilnadu, India</span>
+                        <div class="info-item">
+                            <i class="mdi mdi-map-marker-outline"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Erode, Tamilnadu, India</p>
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-github text-indigo-600 text-xl mr-4"></i>
-                            <span>github.com/Manikandan-2205</span>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://linkedin.com/in/manikandan2205" target="_blank" class="social-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/Manikandan-2205" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -103,48 +112,56 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">My Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            
+            <div class="skills-grid">
                 <!-- Languages -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold text-indigo-600 mb-4">Languages</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">Python</span>
-                                <span class="text-gray-500">90%</span>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="mdi mdi-code-braces mr-2"></i> Languages
+                    </h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>90%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" data-width="90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">SQL</span>
-                                <span class="text-gray-500">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" data-width="85%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-gray-700">C#</span>
-                                <span class="text-gray-500">80%</span>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>85%</span>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                <div class="skill-bar bg-indigo-600 h-2.5 rounded-full" data-width="80%"></div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C#</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Frameworks -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold text-indigo-600 mb-4">Frameworks & Libraries</h3>
-                    <div class="flex flex-wrap gap-3">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="mdi mdi-library mr-2"></i> Frameworks
+                    </h3>
+                    <div class="skill-tags">
                         <span class="skill-tag">.Net Core</span>
                         <span class="skill-tag">ASP.NET</span>
                         <span class="skill-tag">Flask</span>
@@ -152,22 +169,21 @@
                         <span class="skill-tag">Pandas</span>
                         <span class="skill-tag">NumPy</span>
                         <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">BeautifulSoup</span>
                     </div>
                 </div>
                 
-                <!-- Tools & Tech -->
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-semibold text-indigo-600 mb-4">Tools & Technologies</h3>
-                    <div class="flex flex-wrap gap-3">
+                <!-- Tools -->
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="mdi mdi-tools mr-2"></i> Tools & Tech
+                    </h3>
+                    <div class="skill-tags">
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">VS Code</span>
                         <span class="skill-tag">Jupyter</span>
                         <span class="skill-tag">Bootstrap</span>
                         <span class="skill-tag">DataTables</span>
                         <span class="skill-tag">jQuery</span>
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Postman</span>
                     </div>
                 </div>
             </div>
@@ -175,27 +191,32 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Education</h2>
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic journey</p>
+            </div>
+            
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">06/2021 - 05/2023</div>
+                    <div class="timeline-date">2021 - 2023</div>
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-indigo-600">MSc Computer Science</h3>
-                        <h4 class="text-gray-600 mb-3">Sri Vasavi College, Erode</h4>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <h3 class="timeline-title">MSc Computer Science</h3>
+                        <h4 class="timeline-subtitle">Sri Vasavi College, Erode</h4>
+                        <ul class="timeline-list">
                             <li>Developed a Movie Recommendation System with Flask & Machine Learning</li>
                             <li>Specialized in data structures and algorithms</li>
                         </ul>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
-                    <div class="timeline-date">06/2018 - 05/2020</div>
+                    <div class="timeline-date">2018 - 2020</div>
                     <div class="timeline-content">
-                        <h3 class="text-xl font-semibold text-indigo-600">BSc Computer Science</h3>
-                        <h4 class="text-gray-600 mb-3">Sri Vasavi College, Erode</h4>
-                        <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <h3 class="timeline-title">BSc Computer Science</h3>
+                        <h4 class="timeline-subtitle">Sri Vasavi College, Erode</h4>
+                        <ul class="timeline-list">
                             <li>Fundamentals of programming and computer systems</li>
                             <li>Database management systems</li>
                         </ul>
@@ -206,93 +227,121 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+    <section id="projects" class="section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            
+            <div class="projects-grid" id="projects-container">
                 <!-- Projects will be loaded from GitHub API -->
-                <div class="text-center py-8">
-                    <div class="animate-spin inline-block w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full"></div>
-                    <p class="mt-4 text-gray-600">Loading projects from GitHub...</p>
+                <div class="project-card skeleton">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title"></h3>
+                        <p class="project-description"></p>
+                        <div class="project-tech"></div>
+                        <div class="project-links"></div>
+                    </div>
+                </div>
+                <div class="project-card skeleton">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title"></h3>
+                        <p class="project-description"></p>
+                        <div class="project-tech"></div>
+                        <div class="project-links"></div>
+                    </div>
+                </div>
+                <div class="project-card skeleton">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3 class="project-title"></h3>
+                        <p class="project-description"></p>
+                        <div class="project-tech"></div>
+                        <div class="project-links"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm mb-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-indigo-600 text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">Email</h3>
-                                <p class="text-gray-600">manikandanp.2205@gmail.com</p>
-                            </div>
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Feel free to contact me</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="mdi mdi-email-outline"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>manikandanp.2205@gmail.com</p>
                         </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm mb-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-phone text-indigo-600 text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">Phone</h3>
-                                <p class="text-gray-600">+91 9360982027</p>
-                            </div>
+                    <div class="contact-info-item">
+                        <i class="mdi mdi-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 9360982027</p>
                         </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-indigo-600 text-xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-800">Location</h3>
-                                <p class="text-gray-600">Erode, Tamilnadu, India</p>
-                            </div>
+                    <div class="contact-info-item">
+                        <i class="mdi mdi-map-marker-outline"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Erode, Tamilnadu, India</p>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <form id="contact-form" class="bg-gray-50 p-6 rounded-xl shadow-sm">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 mb-2">Your Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-700 mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent" required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full">Send Message</button>
-                    </form>
-                </div>
+                
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="mdi mdi-send mr-2"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-white mb-4">Manikandan P</div>
-                <p class="text-gray-400 max-w-2xl mx-auto mb-6">Python & .NET Developer building scalable solutions with data-driven decision making</p>
-                <div class="flex justify-center space-x-4 mb-6">
-                    <a href="https://linkedin.com/in/manikandan2205" target="_blank" class="social-icon bg-gray-700 hover:bg-indigo-600">
-                        <i class="fab fa-linkedin-in"></i>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Manikandan P</div>
+                <p class="footer-text">Python & .NET Developer building scalable solutions with data-driven decision making</p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/manikandan2205" target="_blank" class="social-icon">
+                        <i class="mdi mdi-linkedin"></i>
                     </a>
-                    <a href="https://github.com/Manikandan-2205" target="_blank" class="social-icon bg-gray-700 hover:bg-indigo-600">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/Manikandan-2205" target="_blank" class="social-icon">
+                        <i class="mdi mdi-github"></i>
                     </a>
                 </div>
-                <p class="text-gray-500 text-sm">&copy; 2023 Manikandan P. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Manikandan P. All rights reserved.</p>
             </div>
         </div>
     </footer>
